@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaPagamentiDigitali
 {
-    internal class PagamentoConAutenticazione
+    internal class SorgenteAutenticata
     {
     }
 }

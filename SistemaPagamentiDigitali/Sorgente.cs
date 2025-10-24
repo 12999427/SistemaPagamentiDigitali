@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaPagamentiDigitali
 {
-    internal class Pagamento
+    internal class Sorgente
     {
         private float saldo;
         public float Saldo
@@ -23,28 +23,11 @@ namespace SistemaPagamentiDigitali
             }
         }
 
-        private float importo;
-        public float Importo
-        {
-            get
-            { return importo; }
-            set
-            {
-                if (value < 0)
-                    throw new ArgumentException();
-                importo = value;
-            }
-        }
-
-        public Pagamento (float saldo, float importo)
+        public Sorgente(float saldo)
         {
             Saldo = saldo;
-            Importo = importo;
         }
 
-        public abstract bool VerificaDisponibilita ()
-        {
-
-        }
+        public 
     }
 }
