@@ -37,7 +37,7 @@ namespace SistemaPagamentiDigitali
         {
             float s = transazioni[n].saldoPrec;
             float i = transazioni[n].importo;
-            return $"Transazione:\nConto Precedente: {s}\nImporto: {i}\nConto Successivo: {s} - {i} = {s-i}";
+            return $"===SCONTRINO===\nTransazione:\nConto Precedente: {s}\nImporto: {i}\nConto Successivo: {s} - {i} = {s-i}";
         }
 
 

@@ -19,14 +19,14 @@ namespace SistemaPagamentiDigitali
             LimiteCarta = creditLimit;
         }
 
-        public virtual bool VerificaDisponibilita(float credito)
+        public override bool VerificaDisponibilita(float credito)
         {
             float totaleSpeso = 0;
             foreach (var i in transazioni)
             {
                 totaleSpeso += i.importo;
             }
-            if (LimiteCarta > totaleSpeso)
+            if (LimiteCarta > totaleSpeso+credito)
             {
                 return true;
             }
