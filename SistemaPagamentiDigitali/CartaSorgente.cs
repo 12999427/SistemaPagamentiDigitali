@@ -26,7 +26,7 @@ namespace SistemaPagamentiDigitali
             {
                 totaleSpeso += i.importo;
             }
-            if (LimiteCarta > totaleSpeso+credito)
+            if (LimiteCarta >= totaleSpeso+credito)
             {
                 return true;
             }

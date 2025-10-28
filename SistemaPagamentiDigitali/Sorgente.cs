@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace SistemaPagamentiDigitali
 {
-    internal class Sorgente
+    internal abstract class Sorgente
     {
         protected List<(float saldoPrec, float importo)> transazioni = new();
 
         public float Saldo { get; set; }
 
-        public Sorgente(float saldo)
+        protected Sorgente(float saldo)
         {
             Saldo = saldo;
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaPagamentiDigitali
 {
-    internal class SorgenteAutenticata : Sorgente
+    internal abstract class SorgenteAutenticata : Sorgente
     {
         private string credenziali;
         protected string Credenziali
@@ -27,18 +27,18 @@ namespace SistemaPagamentiDigitali
         }
         public override int EseguiTransazione(float credito, string credenziali = null)
         {
-            if (credenziali != null || autentica(credenziali))
+            if (credenziali != null && Autentica(credenziali))
                 return base.EseguiTransazione(credito);
             else
                 return -1;
         }
 
-        protected virtual bool autentica (string credenziali)
+        protected virtual bool Autentica (string credenziali)
         {
             return credenziali == Credenziali;
         }
 
-        public SorgenteAutenticata (float saldo, string credenzaili) : base(saldo)
+        protected SorgenteAutenticata (float saldo, string credenzaili) : base(saldo)
         {
             Credenziali = credenzaili;
         }
